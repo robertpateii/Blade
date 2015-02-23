@@ -103,7 +103,7 @@ namespace Blade.Utility
 
 			CorePipeline.Run("resolveRenderingDataSource", args);
 
-			return args.DataSourceItems.ToArray();
+			return args.DataSourceItems.Where(result => result.Versions.Count > 0).ToArray();
 		}
 	}
 }
